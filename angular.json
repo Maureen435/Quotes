@@ -119,6 +119,123 @@
           }
         }
       }
+    },
+    "date-date-count-pipe": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/date-date-count-pipe",
+      "sourceRoot": "projects/date-date-count-pipe/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/date-date-count-pipe",
+            "index": "projects/date-date-count-pipe/src/index.html",
+            "main": "projects/date-date-count-pipe/src/main.ts",
+            "polyfills": "projects/date-date-count-pipe/src/polyfills.ts",
+            "tsConfig": "projects/date-date-count-pipe/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/date-date-count-pipe/src/favicon.ico",
+              "projects/date-date-count-pipe/src/assets"
+            ],
+            "styles": [
+              "projects/date-date-count-pipe/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/date-date-count-pipe/src/environments/environment.ts",
+                  "with": "projects/date-date-count-pipe/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "date-date-count-pipe:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "date-date-count-pipe:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "date-date-count-pipe:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/date-date-count-pipe/src/test.ts",
+            "polyfills": "projects/date-date-count-pipe/src/polyfills.ts",
+            "tsConfig": "projects/date-date-count-pipe/tsconfig.spec.json",
+            "karmaConfig": "projects/date-date-count-pipe/karma.conf.js",
+            "assets": [
+              "projects/date-date-count-pipe/src/favicon.ico",
+              "projects/date-date-count-pipe/src/assets"
+            ],
+            "styles": [
+              "projects/date-date-count-pipe/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/date-date-count-pipe/tsconfig.app.json",
+              "projects/date-date-count-pipe/tsconfig.spec.json",
+              "projects/date-date-count-pipe/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/date-date-count-pipe/e2e/protractor.conf.js",
+            "devServerTarget": "date-date-count-pipe:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "date-date-count-pipe:serve:production"
+            }
+          }
+        }
+      }
     }},
   "defaultProject": "Quotes"
 }

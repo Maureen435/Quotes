@@ -1,0 +1,36 @@
+mycard {
+    background-color: whitesmoke;
+}
+.mytop {
+    height: 80vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-weight: bold;
+    font-size: xx-large;
+    color: white;
+    background-color: black;
+}
+footer {
+    height: 20vh;
+    background-color: bisque;
+    color: black;
+    font-weight: bold;
+    margin-top: 10px;
+    width: 100%;
+    padding: 0;
+}
+.link {
+    color: black;
+    font-weight: bold;
+}
+.link:hover {
+    text-decoration: none;
+    color: tomato;
+}
+.mybtn {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    background-color: green;
+}
