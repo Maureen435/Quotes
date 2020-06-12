@@ -1,10 +1,10 @@
 <div class="container-fluid">
     <div class="my-top">
         <h1 class="text-center"><span>Inspiring life quotes</span></h1>
-        <p>Add your quote</p>
+        <p class="text-center">Add your quote</p>
         <br><br><br>
         <div class="text-center pt-1"></div>
-        <a href="#addquote" class="btn btn-outline-success btn-lg p-1 mybtn">Create quote</a>
+
     </div>
 </div>
 <hr>
@@ -12,8 +12,8 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <p *ngIf='quotes.lenght> 0'><button (click)='findHighestVotes()' class="btn btn-outline-Info">Check the best quote</button> </p>
-            <div *ngIf='bestQuote && quotes.lenght > 0' appHighlightBestQuote>
+            <p *ngIf='quotes.length> 0'><button (click)='findHighestVotes()' class="btn btn-outline-Info">Check the best quote</button> </p>
+            <div *ngIf='bestQuote && quotes.length > 0' appHighlightBestQuote>
 
             </div>
             <p>{{bestQuote}}</p>
@@ -21,11 +21,11 @@
             <p>{{dislikeCounter}}</p>
         </div>
     </div>
-    <div *ngFor='let quote of quote;let i= index'>
+    <div *ngFor='let quote of quotes;let i= index'>
         <div class="card p-3 mb-3 mycard">
 
         </div>
-        <h6 appstrikethrough>{{quote.name}}:<span class="blackquote-footer">This quote was posted on:{{ quote.completeDate | timeAgo }}</span></h6>
+        <h6 appstrikethrough>{{quote.name}}:<span class="blackquote-footer">This quote was posted on:{{ quote.completeDate}}</span></h6>
         <div class="row">
         <a href="#" onclick="event.preventDefault()" (click)="countClick(quote)">
             <i class="fa fa-thumbs-up pr-1 ml-4 like" ng-click="count + 1"
@@ -34,18 +34,17 @@
         <span class=m-4>{{ quote.clickCounter }}</span>
     </div>
     </div>
-    <a href="#" onclick="event.preventDefault()" (click)="countDislike(quote)">
+    <a href="#" onclick="event.preventDefault()" (click)="countDislike(quotes)">
     <i class="fa fa-thumbs-down pr-1 dislike"  ng-click="count + 1" 
     ng-init="count=0" style="color:red;"></i>
     </a>
-    <span class="m-4">{{ quote.dislikeCounter }}</span>
+    <span class="m-4">dislikeCounter</span>
     <div>
-        <button (click)='toggleDetails(i)' class="btn btn-outline-info">check Author or Delete</button>
+        <button class="btn btn-outline-info">check Author or Delete</button>
 
     </div>
-    <app-quote-detail *ngIf='quote.showDescription' [quote]='quote'
-    (isComplete)='deleteQuote($event,i)'></app-quote-detail>
-    <app-quote-form(addquote)="addNewQuote($event)"></app-quote-form>
+    <app-quote-detail [quote]='quotes'></app-quote-detail>
+    <app-quote-form (addquote)="addNewQuote($event)"></app-quote-form>
     <footer class="page-footer font-small black">
         <div class="footer-copyright text-center pt-5">
             @2020:
