@@ -3,6 +3,9 @@
 
  ## Author
  Maureen Chepkemoi
+
+ ## Technologies used
+  Open terminal (CTRL ALT T) git clone https://github.com/Maureen435/Ip.resubmit.git easy-to-understand use atom . or code . to open the clone repo on Atom or VS-code respectively
   
 # Quotes
 
