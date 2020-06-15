@@ -1,5 +1,8 @@
-### Project
+# Project
  the project is about Quotes, one can add the quote and delete the quote
+
+ ## Author
+ 
   
 # Quotes
 
